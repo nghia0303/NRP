@@ -1,27 +1,22 @@
 from Binomial.BinomialALO import BinomialALO
 from Binomial.BinomialAMO import BinomialAMO
+from Binomial.BinomialAMK import BinomialAMK
 
 from cnf.CNF import CNF
 
 def main():
-    n = 20
+    n = 10
     k = 5
     variable_list = list(range(1, n + 1))
 
-    encoding = BinomialAMO(
-        n, variable_list, n
-    )
+    binomial_amk = BinomialAMK(n, k, variable_list, n)
 
-    cnf = CNF(
-        encoding.current_variable_count,
-        encoding.clause_count,
-        encoding.cnf
-    )
+    print(binomial_amk)
 
-    print(cnf)
-    print("added variable", encoding.current_variable_count)
-    print("added clauses", encoding.clause_count)
-    cnf.write_to_file("../cnf/BinomialAMO.cnf")
+    cnf = CNF(n, binomial_amk.clause_count, binomial_amk.cnf)
+
+    cnf.write_to_file("../cnf/binomial_amk.cnf")
+
 
 if __name__ == '__main__':
     main()
