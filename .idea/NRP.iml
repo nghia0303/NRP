@@ -14,6 +14,7 @@
         <option value="$MODULE_DIR$/cnf" />
         <option value="$MODULE_DIR$/Main" />
         <option value="$MODULE_DIR$/staircaseAtLeastOne" />
+        <option value="$MODULE_DIR$/SC" />
       </list>
     </option>
   </component>
