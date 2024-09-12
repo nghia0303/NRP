@@ -3,6 +3,8 @@ from Binomial.BinomialAMO import BinomialAMO
 from Binomial.BinomialAMK import BinomialAMK
 
 from SC.SCAMO import SCAMO
+from SC.SCAMK import SCAMK
+
 
 from cnf.CNF import CNF
 
@@ -11,15 +13,15 @@ def main():
     k = 5
     variable_list = list(range(1, n + 1))
 
-    scamo = SCAMO(
+    scamk = SCAMK(
         n, k, variable_list, n
     )
 
     cnf = CNF(
-        scamo.current_variable_count, scamo.clause_count, scamo.cnf
+        scamk.current_variable_count, scamk.clause_count, scamk.cnf
     )
 
-    cnf.write_to_file("../cnf/SCAMO.cnf")
+    cnf.write_to_file("../cnf/SCAMK.cnf")
 
 
 if __name__ == '__main__':
