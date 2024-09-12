@@ -7,8 +7,17 @@ class SCEncoding:
         self.current_variable_count = current_variable_count
         self.clause_count = 0
         self.cnf = []
-        
+        self.x_map = {}
+        self.add_x_map()
+
         self.s_map = {}
+
+
+    def add_x_map(self):
+        j = 0
+        for i in range(1, self.n + 1):
+            self.x_map[i] = self.variable_list[j]
+            j += 1
 
 
     def __str__(self) -> str:
