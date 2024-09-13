@@ -5,7 +5,7 @@ class CNF:
         self.clauses = clauses
 
     def __str__(self) -> str:
-        name = "c Staircase at least one"
+        name = ""
         head = "p cnf " + str(self.number_of_variables) + " " + str(self.number_of_clauses)
         variables_list = ""
         for i in range(1, self.number_of_variables + 1):
