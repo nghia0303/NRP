@@ -2,8 +2,8 @@ from SC import SequentialCounterEncoding
 
 class SCAMO(SequentialCounterEncoding.SCEncoding):
 
-    def __init__(self, n, k, variable_list, current_variable_count):
-        super().__init__(n, k, variable_list, current_variable_count)
+    def __init__(self, n, variable_list, current_variable_count):
+        super().__init__(n, 0, variable_list, current_variable_count)
         self.add_s_map()
         self.at_most_one()
 

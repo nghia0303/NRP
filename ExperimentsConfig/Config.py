@@ -3,6 +3,8 @@ from Binomial.BinomialALO import BinomialALO
 
 from staircaseAtLeastOne.StairCaseALO import StairCaseALO
 
+from SC.SCAMO import SCAMO
+
 from cnf.CNF import CNF
 
 
@@ -77,7 +79,31 @@ class Config2(Config):
         print("ALO, ", self.variable_list)
         print(my_staircase_alo.cnf)
 
+class Config3(Config):
+    def __init__(self, n, k, variable_list, current_variable_count):
+        super().__init__(n, k, variable_list, current_variable_count)
+        self.staircase_amo()
+        self.staircase_alo()
 
+    def staircase_amo(self):
+        for i in range(self.n - self.k + 1):
+            temp_variable_list = self.variable_list[i:i + self.k]
+            print("AMO, ", temp_variable_list)
+            scamo = SCAMO(self.k, temp_variable_list, self.current_variable_count)
+            self.cnf += scamo.cnf
+            self.clause_count += scamo.clause_count
+            self.current_variable_count = scamo.current_variable_count
+            print(scamo.cnf)
+
+
+
+    def staircase_alo(self):
+        my_staircase_alo = StairCaseALO(self.n, self.k, self.variable_list, self.current_variable_count)
+        self.cnf += my_staircase_alo.cnf
+        self.clause_count += my_staircase_alo.clause_count
+        self.current_variable_count = my_staircase_alo.current_variable_count
+        print("ALO, ", self.variable_list)
+        print(my_staircase_alo.cnf)
 
 
 
@@ -95,6 +121,12 @@ def main():
     print("Config2")
     config2 = Config2(n, k, variable_list, n)
     config2.cnf_file_export("Results/config2.cnf")
+    # print(config2)
+    print("--------------------------------------------------------------------------")
+
+    print("Config3")
+    config3 = Config3(n, k, variable_list, n)
+    config3.cnf_file_export("Results/config3.cnf")
     # print(config2)
     print("--------------------------------------------------------------------------")
 
