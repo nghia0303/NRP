@@ -10,6 +10,7 @@ class SCAMK(SequentialCounterEncoding.SCEncoding):
         for i in range(1, self.n):
             for j in range(1, self.k + 1):
                 self.current_variable_count += 1
+                self.variable_count += 1
                 self.s_map[(i, j)] = self.current_variable_count
 
 

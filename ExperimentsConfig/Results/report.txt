@@ -1,0 +1,45 @@
+Config 1: 
+Binomial staircase AMO + Binomial staircase ALO
+added variable: 0
+added clauses: 2156
+Variable count AMO: 0
+Variable count ALO: 0
+Clause count AMO: 1960
+Clause count ALO: 196
+--------------------------------------------------------------------------
+Config 2: 
+Binomial staircase AMO + Staircase ALO
+added variable: 234
+added clauses: 2858
+Variable count AMO: 0
+Variable count ALO: 234
+Clause count AMO: 1960
+Clause count ALO: 898
+--------------------------------------------------------------------------
+Config 3: 
+Sequential counter staircase AMO + Staircase ALO
+added variable: 1018
+added clauses: 3054
+Variable count AMO: 4
+Variable count ALO: 234
+Clause count AMO: 2156
+Clause count ALO: 898
+--------------------------------------------------------------------------
+Config 21: 
+Binomial staircase AM2 + Staircase ALO
+added variable: 234
+added clauses: 2858
+Variable count AMO: 0
+Variable count ALO: 234
+Clause count AMO: 1960
+Clause count ALO: 898
+--------------------------------------------------------------------------
+Config 31: 
+Sequential counter staircase AM2 + Staircase ALO
+added variable: 1802
+added clauses: 4426
+Variable count AMO: 8
+Variable count ALO: 234
+Clause count AMO: 3528
+Clause count ALO: 898
+--------------------------------------------------------------------------

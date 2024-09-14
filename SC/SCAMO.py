@@ -10,6 +10,7 @@ class SCAMO(SequentialCounterEncoding.SCEncoding):
     def add_s_map(self):
         for i in range(1, self.n):
             self.current_variable_count += 1
+            self.variable_count += 1
             self.s_map[i] = self.current_variable_count
 
     def at_most_one(self):
